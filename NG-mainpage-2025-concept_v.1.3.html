@@ -1,0 +1,1929 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NaShuntae's Gift - Unique WordPress Design</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        :root {
+            --navy: #1e3a8a;
+            --sky: #38bdf8;
+            --gold: #d97706;
+            --light-blue: #e0f2fe;
+            --white: #ffffff;
+            --gray: #64748b;
+            --dark: #0f172a;
+        }
+        
+        body {
+            font-family: 'Poppins', sans-serif;
+            line-height: 1.6;
+            color: #334155;
+            background: #fafbfc;
+        }
+        
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Montserrat', sans-serif;
+        }
+        
+        /* Professional Header */
+        .main-header {
+            background: var(--white);
+            box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+            position: relative;
+            z-index: 1000;
+        }
+        
+        .header-top {
+            background: var(--navy);
+            color: white;
+            padding: 8px 0;
+            font-size: 13px;
+        }
+        
+        .header-top-content {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 24px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .header-contact {
+            display: flex;
+            gap: 24px;
+        }
+        
+        .header-contact a {
+            color: white;
+            text-decoration: none;
+            opacity: 0.9;
+            transition: opacity 0.3s;
+        }
+        
+        .header-contact a:hover {
+            opacity: 1;
+        }
+        
+        .header-main {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 20px 24px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo-area {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+        }
+        
+        .logo-icon {
+            width: 90px;
+            height: 40px;
+            border-radius: 6px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            color: white;
+            font-weight: 700;
+        }
+        
+        .logo-text h1 {
+            font-size: 22px;
+            font-weight: 800;
+            color: var(--navy);
+            line-height: 1.2;
+        }
+        
+        .logo-text p {
+            font-size: 12px;
+            color: var(--gray);
+            font-weight: 500;
+        }
+        
+        .main-nav {
+            display: flex;
+            gap: 32px;
+            align-items: center;
+        }
+        
+        .main-nav a {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 600;
+            font-size: 15px;
+            color: var(--dark);
+            text-decoration: none;
+            transition: color 0.3s;
+            position: relative;
+        }
+        
+        .main-nav a:hover {
+            color: var(--navy);
+        }
+        
+        .main-nav a.active::after {
+            content: '';
+            position: absolute;
+            bottom: -8px;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: var(--gold);
+            border-radius: 3px;
+        }
+        
+        .nav-cta {
+            background: #fbbf24;
+            color: white !important;
+            padding: 10px 24px;
+            border-radius: 6px;
+            font-weight: 700;
+            box-shadow: 0 2px 8px rgba(217, 119, 6, 0.25);
+            transition: all 0.3s;
+        }
+        
+        .nav-cta:hover {
+            transform: translateY(-1px);
+            box-shadow: 0 4px 12px rgba(217, 119, 6, 0.35);
+        }
+        
+        /* Page Tabs */
+        .page-tabs {
+            position: sticky;
+            top: 0;
+            background: linear-gradient(135deg, var(--navy) 0%, #2563eb 100%);
+            border-top: 1px solid rgba(255,255,255,0.1);
+            z-index: 1000;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+        }
+        
+        .tabs-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: flex;
+            gap: 0;
+        }
+        
+        .tab-button {
+            flex: 1;
+            padding: 16px 24px;
+            background: transparent;
+            border: none;
+            color: rgba(255,255,255,0.7);
+            font-family: 'Montserrat', sans-serif;
+            font-size: 16px;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.3s;
+            border-bottom: 4px solid transparent;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        
+        .tab-button:hover {
+            color: #ffffff;
+            background: rgba(255,255,255,0.1);
+        }
+        
+        .tab-button.active {
+            color: #ffffff;
+            background: rgba(255,255,255,0.15);
+            border-bottom-color: #fbbf24;
+        }
+        
+        /* Page Container */
+        .page-content {
+            display: none;
+        }
+        
+        .page-content.active {
+            display: block;
+        }
+        
+        /* Unique Hero - Background Image with Text Overlay */
+        .hero-diagonal {
+            position: relative;
+            min-height: 650px;
+            background-image: url('https://cdn.prod.website-files.com/675f9e2d3d12a7e636a1bdb3/6957483b05cfd4c7cb1e0c7d_ng-main-hero-image-c1.jpg');
+            background-size: cover;
+            background-position: center right;
+            background-repeat: no-repeat;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+        }
+        
+        .hero-diagonal::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            z-index: 1;
+        }
+        
+        .hero-content-wrapper {
+            width: 100%;
+            padding: 80px 120px;
+            position: relative;
+            z-index: 2;
+        }
+        
+        .hero-text {
+            color: white;
+            max-width: 650px;
+            margin-left: 0;
+        }
+        
+        .hero-badge {
+            display: inline-block;
+            background: rgba(255,255,255,0.15);
+            backdrop-filter: blur(10px);
+            padding: 6px 16px;
+            border-radius: 4px;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 12px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1.2px;
+            margin-bottom: 20px;
+            border: 1px solid rgba(255,255,255,0.25);
+        }
+        
+        .hero-text h1 {
+            font-size: 56px;
+            font-weight: 800;
+            line-height: 1.1;
+            margin-bottom: 24px;
+            text-shadow: 0 4px 20px rgba(0,0,0,0.4);
+        }
+        
+        .hero-text h1 span {
+            color: #fbbf24;
+        }
+        
+        .hero-text p {
+            font-size: 19px;
+            line-height: 1.7;
+            opacity: 0.95;
+            margin-bottom: 0;
+            font-weight: 400;
+            text-shadow: 0 2px 10px rgba(0,0,0,0.3);
+        }
+        
+        .hero-stats {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+            background: rgba(255,255,255,0.1);
+            backdrop-filter: blur(10px);
+            padding: 28px;
+            border-radius: 8px;
+            border: 1px solid rgba(255,255,255,0.2);
+        }
+        
+        .hero-image-container {
+            background: rgba(255,255,255,0.1);
+            backdrop-filter: blur(10px);
+            padding: 24px;
+            border-radius: 10px;
+            border: 1px solid rgba(255,255,255,0.2);
+        }
+        
+        .hero-image-frame {
+            background: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 8px 32px rgba(0,0,0,0.2);
+        }
+        
+        .hero-portrait {
+            width: 100%;
+            height: 400px;
+            object-fit: cover;
+            display: block;
+        }
+        
+        .hero-image-caption {
+            background: linear-gradient(135deg, var(--navy) 0%, #1e40af 100%);
+            padding: 20px 24px;
+            text-align: center;
+        }
+        
+        .caption-name {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 20px;
+            font-weight: 700;
+            color: white;
+            margin-bottom: 4px;
+        }
+        
+        .caption-title {
+            font-size: 14px;
+            color: rgba(255,255,255,0.85);
+            font-weight: 500;
+        }
+        
+        .hero-message-box {
+            background: rgba(255,255,255,0.1);
+            backdrop-filter: blur(10px);
+            padding: 32px;
+            border-radius: 10px;
+            border: 1px solid rgba(255,255,255,0.2);
+            text-align: center;
+        }
+        
+        .hero-message-text {
+            font-size: 24px;
+            line-height: 1.5;
+            font-style: italic;
+            font-weight: 600;
+            margin-bottom: 16px;
+        }
+        
+        .hero-message-subtext {
+            font-size: 16px;
+            opacity: 0.9;
+            font-weight: 400;
+        }
+        
+        .stat-item {
+            text-align: center;
+        }
+        
+        .stat-number {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 36px;
+            font-weight: 800;
+            color: var(--gold);
+            line-height: 1;
+            margin-bottom: 8px;
+        }
+        
+        .stat-label {
+            font-size: 13px;
+            opacity: 0.9;
+            font-weight: 500;
+        }
+        
+        /* Asymmetric Section */
+        .section-asymmetric {
+            max-width: 1400px;
+            margin: -80px auto 0;
+            padding: 0 24px 80px;
+            position: relative;
+            z-index: 10;
+        }
+        
+        .asymmetric-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 24px;
+        }
+        
+        .feature-large {
+            background: white;
+            border-radius: 10px;
+            padding: 44px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.06);
+            border-top: 4px solid #fbbf24;
+        }
+        
+        .feature-large h2 {
+            font-size: 34px;
+            font-weight: 800;
+            color: var(--navy);
+            margin-bottom: 16px;
+            line-height: 1.2;
+        }
+        
+        .feature-large .subtitle {
+            font-size: 18px;
+            color: var(--gray);
+            margin-bottom: 28px;
+            font-weight: 500;
+        }
+        
+        .criteria-list {
+            display: grid;
+            gap: 20px;
+        }
+        
+        .criteria-item {
+            display: flex;
+            gap: 16px;
+            align-items: start;
+        }
+        
+        .criteria-icon {
+            width: 48px;
+            height: 48px;
+            min-width: 48px;
+            background: linear-gradient(135deg, var(--sky) 0%, var(--navy) 100%);
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 22px;
+        }
+        
+        .criteria-item h4 {
+            font-size: 18px;
+            font-weight: 700;
+            color: var(--navy);
+            margin-bottom: 6px;
+        }
+        
+        .criteria-item p {
+            font-size: 15px;
+            color: var(--gray);
+            line-height: 1.6;
+        }
+        
+        .feature-sidebar {
+            display: flex;
+            flex-direction: column;
+            gap: 24px;
+        }
+        
+        .sidebar-card {
+            background: linear-gradient(135deg, var(--light-blue) 0%, #bfdbfe 100%);
+            border-radius: 10px;
+            padding: 28px;
+            border-left: 4px solid var(--navy);
+        }
+        
+        .sidebar-card h3 {
+            font-size: 20px;
+            font-weight: 800;
+            color: var(--navy);
+            margin-bottom: 14px;
+        }
+        
+        .sidebar-card p {
+            font-size: 15px;
+            line-height: 1.6;
+            color: #475569;
+        }
+        
+        .sidebar-card.accent {
+            background: linear-gradient(135deg, var(--navy) 0%, #2563eb 100%);
+            color: white;
+        }
+        
+        .sidebar-card.accent h3,
+        .sidebar-card.accent p {
+            color: white;
+        }
+        
+        /* Bento Grid - Modern Layout */
+        .bento-section {
+            padding: 80px 24px;
+            background: white;
+        }
+        
+        .bento-container {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+        
+        .section-header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+        
+        .section-header h2 {
+            font-size: 38px;
+            font-weight: 800;
+            color: var(--navy);
+            margin-bottom: 14px;
+        }
+        
+        .section-header p {
+            font-size: 18px;
+            color: var(--gray);
+            max-width: 700px;
+            margin: 0 auto;
+        }
+        
+        .bento-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 24px;
+        }
+        
+        .bento-item {
+            background: var(--light-blue);
+            border-radius: 10px;
+            padding: 32px;
+            display: flex;
+            flex-direction: column;
+            transition: all 0.3s;
+            border: 2px solid transparent;
+        }
+        
+        .bento-item:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 24px rgba(30,58,138,0.1);
+            border-color: var(--sky);
+        }
+        
+        .bento-icon {
+            font-size: 36px;
+            margin-bottom: 14px;
+        }
+        
+        .bento-item h3 {
+            font-size: 20px;
+            font-weight: 800;
+            margin-bottom: 10px;
+        }
+        
+        .bento-item p {
+            font-size: 15px;
+            line-height: 1.6;
+            opacity: 0.9;
+        }
+        
+        
+        
+        /* Stories - Magazine Style */
+        .stories-section {
+            padding: 80px 24px;
+            background: linear-gradient(180deg, #fafbfc 0%, var(--light-blue) 100%);
+        }
+        
+        .stories-container {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+        
+        .stories-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 32px;
+            margin-top: 60px;
+        }
+        
+        .story-card-modern {
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 4px 16px rgba(0,0,0,0.06);
+            transition: all 0.3s;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .story-card-modern:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 24px rgba(0,0,0,0.1);
+        }
+        
+        .story-header-modern {
+            background: linear-gradient(135deg, var(--navy) 0%, #1e40af 100%);
+            color: white;
+            padding: 28px;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .story-header-modern::before {
+            content: '"';
+            position: absolute;
+            top: -20px;
+            left: 20px;
+            font-size: 180px;
+            font-family: Georgia, serif;
+            opacity: 0.1;
+            line-height: 1;
+        }
+        
+        .story-header-modern h3 {
+            font-size: 20px;
+            font-weight: 800;
+            line-height: 1.3;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .story-body-modern {
+            padding: 32px;
+            flex-grow: 1;
+        }
+        
+        .story-body-modern p {
+            font-size: 16px;
+            line-height: 1.8;
+            color: #475569;
+        }
+        
+        /* Honorees - Elegant List */
+        .honorees-section {
+            padding: 80px 24px;
+            background: white;
+        }
+        
+        .honorees-container {
+            max-width: 1000px;
+            margin: 0 auto;
+            text-align: center;
+        }
+        
+        .honorees-container h2 {
+            font-size: 38px;
+            font-weight: 800;
+            color: var(--navy);
+            margin-bottom: 18px;
+        }
+        
+        .honorees-intro {
+            font-size: 18px;
+            color: var(--gray);
+            margin-bottom: 48px;
+        }
+        
+        .honorees-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 16px;
+        }
+        
+        .honoree-name {
+            background: linear-gradient(135deg, var(--light-blue) 0%, #e0f2fe 100%);
+            padding: 16px 20px;
+            border-radius: 6px;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 15px;
+            font-weight: 700;
+            color: var(--navy);
+            border-left: 3px solid #fbbf24;
+            transition: all 0.3s;
+        }
+        
+        .honoree-name:hover {
+            transform: translateX(4px);
+            background: linear-gradient(135deg, var(--sky) 0%, #38bdf8 100%);
+            color: white;
+            border-left-color: var(--navy);
+        }
+        
+        /* CTA Section - Split */
+        .cta-split {
+            background: linear-gradient(135deg, var(--navy) 0%, #1e40af 100%);
+            padding: 100px 24px;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .cta-split::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -20%;
+            width: 600px;
+            height: 600px;
+            background: radial-gradient(circle, rgba(56,189,248,0.2) 0%, transparent 70%);
+            border-radius: 50%;
+        }
+        
+        .cta-content {
+            max-width: 900px;
+            margin: 0 auto;
+            text-align: center;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .cta-content h2 {
+            font-size: 42px;
+            font-weight: 800;
+            color: white;
+            margin-bottom: 20px;
+        }
+        
+        .cta-content p {
+            font-size: 18px;
+            color: rgba(255,255,255,0.9);
+            margin-bottom: 36px;
+            line-height: 1.6;
+        }
+        
+        .btn-primary {
+            display: inline-block;
+            background: #fbbf24;
+            color: #005398;
+            padding: 16px 40px;
+            border-radius: 6px;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 16px;
+            font-weight: 700;
+            text-decoration: none;
+            transition: all 0.3s;
+            box-shadow: 0 4px 16px rgba(217,119,6,0.3);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(217,119,6,0.4);
+        }
+        
+        /* Legacy Section */
+        .legacy-section {
+            padding: 100px 24px;
+            background: linear-gradient(180deg, var(--light-blue) 0%, white 100%);
+        }
+        
+        .legacy-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 80px;
+            align-items: center;
+        }
+        
+        .legacy-image {
+            width: 100%;
+            height: 480px;
+            background: linear-gradient(135deg, var(--navy) 0%, var(--sky) 100%);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 120px;
+            box-shadow: 0 8px 32px rgba(30,58,138,0.15);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .legacy-image::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+
+        }
+        
+        .legacy-content h2 {
+            font-size: 38px;
+            font-weight: 800;
+            color: var(--navy);
+            margin-bottom: 20px;
+        }
+        
+        .legacy-content .name {
+            font-size: 24px;
+            font-weight: 700;
+            color: #fbbf24;
+            margin-bottom: 24px;
+        }
+        
+        .legacy-content p {
+            font-size: 17px;
+            line-height: 1.8;
+            color: #475569;
+            margin-bottom: 20px;
+        }
+        .legacy-content .testimonial-box {
+            margin-top: 32px;
+            padding: 32px;
+            background: linear-gradient(135deg, #f8fafc 0%, #e0f2fe 100%);
+            border-radius: 8px;
+            border-left: 4px solid var(--sky);
+            display: flex;
+            gap: 24px;
+            align-items: center;
+        }
+        
+        .testimonial-photo {
+            width: 120px;
+            height: 120px;
+            min-width: 120px;
+            border-radius: 50%;
+            overflow: hidden;
+            border: 4px solid white;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+        
+        .testimonial-photo img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        .testimonial-content {
+            flex: 1;
+            gap: 12px;
+        }
+        
+        .testimonial-quote {
+            font-size: 20px;
+            font-style: italic;
+            color: #475569;
+            line-height: 1.6;
+            margin-bottom: 16px;
+        }
+        
+        .testimonial-author {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 18px;
+            font-weight: 700;
+            color: var(--sky);
+        }
+        
+        .testimonial-role {
+            font-size: 15px;
+            color: #64748b;
+            font-weight: 500;
+        }
+        
+        @media (max-width: 768px) {
+            .legacy-content .testimonial-box {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            .testimonial-quote {
+                font-size: 18px;
+            }
+        }
+        
+        .legacy-content .highlight {
+            font-size: 18px;
+            font-weight: 600;
+            color: var(--navy);
+            margin-top: 28px;
+            padding: 20px;
+            background: linear-gradient(135deg, var(--light-blue) 0%, #e0f2fe 100%);
+            border-radius: 8px;
+            border-left: 4px solid #fbbf24;
+        }
+        
+        
+        /* Donor Page - Process Section */
+        .process-section {
+            padding: 80px 24px;
+            background: white;
+        }
+        
+        .process-container {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+        
+        .process-flow {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 32px;
+            margin-top: 60px;
+            position: relative;
+        }
+        
+        .process-flow::before {
+            content: '';
+            position: absolute;
+            top: 60px;
+            left: 12%;
+            right: 12%;
+            height: 3px;
+            background: linear-gradient(90deg, var(--sky) 0%, var(--navy) 50%, var(--gold) 100%);
+            z-index: 0;
+        }
+        
+        .process-step {
+            text-align: center;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .process-number {
+            width: 100px;
+            height: 100px;
+            margin: 0 auto 20px;
+            background: white;
+            border: 4px solid var(--navy);
+            border-radius: 50%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 42px;
+            font-weight: 800;
+            color: var(--navy);
+            box-shadow: 0 4px 16px rgba(30,58,138,0.12);
+            position: relative;
+        }
+        
+        .process-step:nth-child(4) .process-number {
+            border-color: #fbbf24;
+            color: #fbbf24;
+        }
+        
+        .process-step h3 {
+            font-size: 18px;
+            font-weight: 800;
+            color: var(--navy);
+            margin-bottom: 10px;
+        }
+        
+        .process-step p {
+            font-size: 14px;
+            color: var(--gray);
+            line-height: 1.5;
+        }
+        
+        /* Footer Section */
+        .main-footer {
+            background: #1e293b;
+            color: white;
+        }
+        
+        .footer-top {
+            background: #0f172a;
+            padding: 20px 0;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+        }
+        
+        .footer-top-content {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 24px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .footer-credits {
+            font-size: 14px;
+            color: rgba(255,255,255,0.7);
+        }
+        
+        .footer-credits a {
+            color: #38bdf8;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        
+        .footer-credits a:hover {
+            color: #7dd3fc;
+        }
+        
+        .footer-social {
+            display: flex;
+            gap: 16px;
+        }
+        
+        .footer-social a {
+            width: 36px;
+            height: 36px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: rgba(255,255,255,0.1);
+            border-radius: 6px;
+            color: white;
+            text-decoration: none;
+            transition: all 0.3s;
+            font-size: 18px;
+        }
+        
+        .footer-social a:hover {
+            background: #38bdf8;
+            transform: translateY(-2px);
+        }
+        
+        .footer-main {
+            background: linear-gradient(135deg, #1e3a8a 0%, #2563eb 100%);
+            padding: 60px 24px;
+        }
+        
+        .footer-main-content {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 2fr 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+        
+        .footer-branding h3 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 32px;
+            font-weight: 800;
+            margin-bottom: 8px;
+            line-height: 1.2;
+        }
+        
+        .footer-branding .gift-text {
+            font-size: 42px;
+            font-weight: 300;
+            letter-spacing: 2px;
+        }
+        
+        .footer-description {
+            font-size: 15px;
+            line-height: 1.7;
+            color: rgba(255,255,255,0.9);
+        }
+        
+        .footer-powered {
+            text-align: right;
+        }
+        
+        .powered-label {
+            font-size: 12px;
+            color: rgba(255,255,255,0.6);
+            margin-bottom: 8px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        
+        .powered-logo {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 24px;
+            font-weight: 700;
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+            gap: 8px;
+        }
+        
+        .powered-icon {
+            width: 32px;
+            height: 32px;
+            background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%);
+            border-radius: 4px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 18px;
+        }
+        
+        .footer-bottom {
+            background: #1e3a8a;
+            padding: 16px 24px;
+            text-align: center;
+        }
+        
+        .footer-bottom p {
+            font-size: 13px;
+            color: rgba(255,255,255,0.7);
+            margin: 0;
+        }
+        
+        @media (max-width: 768px) {
+            .footer-top-content {
+                flex-direction: column;
+                gap: 16px;
+                text-align: center;
+            }
+            
+            .footer-main-content {
+                grid-template-columns: 1fr;
+                gap: 40px;
+                text-align: center;
+            }
+            
+            .footer-powered {
+                text-align: center;
+            }
+            
+            .powered-logo {
+                justify-content: center;
+            }
+        }
+        
+        /* Responsive */
+        @media (max-width: 1200px) {
+            .hero-content-wrapper {
+                padding: 80px 60px;
+            }
+            
+            .hero-text {
+                max-width: 600px;
+            }
+            
+            .asymmetric-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .bento-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .legacy-container {
+                grid-template-columns: 1fr;
+            }
+            
+            .process-flow::before {
+                display: none;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .main-nav {
+                display: none;
+            }
+            
+            .hero-diagonal {
+                min-height: 550px;
+                background-position: 70% center;
+            }
+            
+            .hero-diagonal::before {
+                background: linear-gradient(to right, rgba(30, 58, 138, 0.95) 0%, rgba(30, 58, 138, 0.85) 100%);
+            }
+            
+            .hero-content-wrapper {
+                padding: 60px 40px;
+            }
+            
+            .hero-text h1 {
+                font-size: 38px;
+            }
+            
+            .stories-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .story-featured {
+                grid-template-columns: 1fr;
+            }
+            
+            .bento-grid {
+                grid-template-columns: 1fr;
+                grid-template-rows: auto;
+            }
+            
+            .bento-item {
+                grid-column: span 1 !important;
+                grid-row: span 1 !important;
+            }
+            
+            .process-flow {
+                grid-template-columns: 1fr;
+            }
+            
+            .section-header h2 {
+                font-size: 32px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Professional Header -->
+    <header class="main-header">
+        <div class="header-top">
+            <div class="header-top-content">
+                <div>Washington DECA Annual Scholarship</div>
+                <div class="header-contact">
+                    <a href="mailto:info@nashuntaesgift.org">📧 Contact Us</a>
+                    <a href="#donate">💝 Donate Now</a>
+                </div>
+            </div>
+        </div>
+        
+        <div class="header-main">
+            <div class="logo-area">
+                <div class="logo-icon"><img src="https://cdn.prod.website-files.com/675f9e2d3d12a7e636a1bdb3/695773cadf82deec97b58b60_ng-logo-2025_1.svg" alt="NaShuntae's Gift Logo" style="width: auto; height: 100%; object-fit: cover;"></div>
+                <div class="logo-text">
+                    <h1>NaShuntae's Gift</h1>
+                    <p>Perseverance Recognized. Futures Supported.</p>
+                </div>
+            </div>
+            
+            <nav class="main-nav">
+                <a href="#about" onclick="navigateToSection('about', event)">About</a>
+                <a href="#stories" onclick="navigateToSection('stories', event)">Stories</a>
+                <a href="#honorees" onclick="navigateToSection('honorees', event)">Honorees</a>
+                <a href="#apply" class="nav-cta">Apply Now</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Page Tabs -->
+    <div class="page-tabs">
+        <div class="tabs-container">
+            <button class="tab-button active" onclick="switchPage('student')">For Students</button>
+            <button class="tab-button" onclick="switchPage('donor')">For Donors</button>
+        </div>
+    </div>
+
+    <!-- STUDENT PAGE -->
+    <div id="student-page" class="page-content active">
+        <!-- Diagonal Hero -->
+        <section class="hero-diagonal">
+            <div class="hero-content-wrapper">
+                <div class="hero-text">
+                    <div class="hero-badge">Washington DECA Scholarship</div>
+                    <h1>Perseverance <span>Recognized.</span><br>Futures Supported.</h1>
+                    <p>An annual scholarship honoring graduating DECA seniors whose lives have been shaped by real adversity—and who kept going.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Asymmetric Section -->
+        <section class="section-asymmetric" id="about">
+            <div class="asymmetric-grid">
+                <div class="feature-large">
+                    <h2>What Makes NaShuntae's Gift Different</h2>
+                    <p class="subtitle">This scholarship is not about perfection. It is about perseverance.</p>
+                    
+                    <div class="criteria-list">
+                        <div class="criteria-item">
+                            <div class="criteria-icon"><svg id='Entertainment_Gaming_Stats_Strength_Muscle_Arm_24' width='24' height='24' viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink'><rect width='24' height='24' stroke='none' fill='#000000' opacity='0'/>
+
+
+<g transform="matrix(0.42 0 0 0.42 12 12)" >
+<g style="" >
+<g transform="matrix(1 0 0 1 0 0)" >
+<path style="stroke: rgb(255,255,255); stroke-width: 3; stroke-dasharray: none; stroke-linecap: butt; stroke-dashoffset: 0; stroke-linejoin: round; stroke-miterlimit: 4; fill: none; fill-rule: nonzero; opacity: 1;" transform=" translate(-24, -24)" d="M 29.886 29.7315 C 22.466 21.7575 14.5037 21.2256 8.92412 22.5654 C 5.61905 23.359 3.51536 26.3788 3.2187 29.7648 C 3.09183 31.2129 3 32.8983 3 34.7436 C 3 36.819 3.11616 38.6922 3.26768 40.2529 C 3.53916 43.0492 5.97725 45.0079 8.78668 45.0001 C 22.495 44.9623 31.2565 44.7656 36.7443 44.561 C 41.6562 44.3778 45.3401 40.4278 44.9697 35.5264 C 44.7633 32.795 44.4103 29.8353 43.8091 27.3447 C 41.5767 18.096 32.401 8.6009 28.6128 4.99227 C 27.5497 3.97959 26.1998 3.34416 24.7377 3.21092 C 23.537 3.10152 21.9129 3 20.0199 3 C 15.9151 3 13.5447 3.47735 13.5447 3.47735 C 10.3814 4.65851 9.1819 10.0633 10.0086 13.2056 C 10.3161 14.3741 11.3919 15.0907 12.5822 15.2986 C 14.0592 15.5565 16.3803 15.7073 19.2447 15.0367 C 19.7579 14.9165 20.2395 14.6772 20.6273 14.3202 C 22.0185 13.0399 23 11.5 23 11.5 C 24.3015 18.3738 29.886 29.7315 29.886 29.7315 Z" stroke-linecap="round" />
+</g>
+<g transform="matrix(1 0 0 1 -7.5 7)" >
+<path style="stroke: rgb(255,255,255); stroke-width: 3; stroke-dasharray: none; stroke-linecap: round; stroke-dashoffset: 0; stroke-linejoin: miter; stroke-miterlimit: 4; fill: none; fill-rule: nonzero; opacity: 1;" transform=" translate(-16.5, -31)" d="M 10 30.5857 C 12.7857 28.1716 19.2857 28.1716 23 33" stroke-linecap="round" />
+</g>
+<g transform="matrix(1 0 0 1 -3.5 -13.5)" >
+<path style="stroke: rgb(255,255,255); stroke-width: 3; stroke-dasharray: none; stroke-linecap: round; stroke-dashoffset: 0; stroke-linejoin: round; stroke-miterlimit: 4; fill: none; fill-rule: nonzero; opacity: 1;" transform=" translate(-20.5, -10.5)" d="M 23 11.5001 C 22.2184 9.66828 20 9.56821 18 9.50195" stroke-linecap="round" />
+</g>
+</g>
+</g>
+</svg></div>
+                            <div>
+                                <h4>Meaningful Challenges Faced</h4>
+                                <p>Recognition for the real obstacles you've faced and overcome in your journey</p>
+                            </div>
+                        </div>
+                        
+                        <div class="criteria-item">
+                            <div class="criteria-icon"><svg id='Shopping_Business_Target_1_24' width='24' height='24' viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink'><rect width='24' height='24' stroke='none' fill='#000000' opacity='0'/>
+
+
+<g transform="matrix(0.42 0 0 0.42 12 12)" >
+<g style="" >
+<g transform="matrix(1 0 0 1 0 0)" >
+<path style="stroke: rgb(255,255,255); stroke-width: 3; stroke-dasharray: none; stroke-linecap: round; stroke-dashoffset: 0; stroke-linejoin: round; stroke-miterlimit: 4; fill: none; fill-rule: nonzero; opacity: 1;" transform=" translate(-24, -24)" d="M 44.6195 20 C 44.8692 21.2949 45 22.6322 45 24 C 45 35.598 35.598 45 24 45 C 12.402 45 3 35.598 3 24 C 3 12.402 12.402 3 24 3 C 25.3678 3 26.7051 3.13077 28 3.38049" stroke-linecap="round" />
+</g>
+<g transform="matrix(1 0 0 1 -0.56 0.75)" >
+<path style="stroke: rgb(255,255,255); stroke-width: 3; stroke-dasharray: none; stroke-linecap: round; stroke-dashoffset: 0; stroke-linejoin: round; stroke-miterlimit: 4; fill: none; fill-rule: nonzero; opacity: 1;" transform=" translate(-23.44, -24.75)" d="M 20.0311 19.5 C 18.7856 20.5994 18 22.2079 18 23.9999 C 18 27.3136 20.6863 29.9999 24 29.9999 C 26.0075 29.9999 27.7847 29.014 28.8739 27.5" stroke-linecap="round" />
+</g>
+<g transform="matrix(1 0 0 1 0 0)" >
+<path style="stroke: rgb(255,255,255); stroke-width: 3; stroke-dasharray: none; stroke-linecap: round; stroke-dashoffset: 0; stroke-linejoin: round; stroke-miterlimit: 4; fill: none; fill-rule: nonzero; opacity: 1;" transform=" translate(-24, -24)" d="M 37.4635 23 C 37.4877 23.3302 37.5 23.6637 37.5 24 C 37.5 31.4558 31.4558 37.5 24 37.5 C 16.5442 37.5 10.5 31.4558 10.5 24 C 10.5 16.5442 16.5442 10.5 24 10.5 C 24.3363 10.5 24.6698 10.5123 25 10.5365" stroke-linecap="round" />
+</g>
+<g transform="matrix(1 0 0 1 9.97 -9.97)" >
+<path style="stroke: rgb(255,255,255); stroke-width: 3; stroke-dasharray: none; stroke-linecap: round; stroke-dashoffset: 0; stroke-linejoin: round; stroke-miterlimit: 4; fill: none; fill-rule: nonzero; opacity: 1;" transform=" translate(-33.97, -14.03)" d="M 36.0008 3 L 38.0008 10 L 45.0008 12 L 39.4973 17.0504 C 38.8415 17.6521 37.9525 17.9317 37.0704 17.8134 L 34.1186 17.4178 L 26.106 24.5735 C 25.3555 25.2437 24.2124 25.2114 23.5009 24.5 C 22.7895 23.7886 22.7572 22.6454 23.4274 21.895 L 30.5831 13.8823 L 30.1875 10.9305 C 30.0693 10.0484 30.3488 9.15938 30.9505 8.50365 L 36.0008 3 Z" stroke-linecap="round" />
+</g>
+</g>
+</g>
+</svg></div>
+                            <div>
+                                <h4>Actions Taken to Overcome</h4>
+                                <p>Demonstrating concrete steps you took to move forward despite adversity</p>
+                            </div>
+                        </div>
+                        
+                        <div class="criteria-item">
+                            <div class="criteria-icon"><svg id='Leaderboard_24' width='24' height='24' viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink'><rect width='24' height='24' stroke='none' fill='#000000' opacity='0'/>
+
+
+<g transform="matrix(0.48 0 0 0.48 12 12)" >
+<path style="stroke: none; stroke-width: 1; stroke-dasharray: none; stroke-linecap: butt; stroke-dashoffset: 0; stroke-linejoin: miter; stroke-miterlimit: 4; fill: rgb(255,255,255); fill-rule: nonzero; opacity: 1;" transform=" translate(-24, -24.5)" d="M 16.5 8 C 15.67160718568731 8.000082826858025 15.000082826858023 8.671607185687312 15 9.5 L 15 16 L 4.5 16 C 3.6716071856873107 16.000082826858023 3.0000828268580233 16.67160718568731 3 17.5 L 3 23.5 L 3 37.5 L 3 39.5 C 3.0000828268580237 40.328392814312686 3.671607185687311 40.999917173141974 4.5 41 L 43.5 41 C 44.328392814312686 40.999917173141974 44.999917173141974 40.328392814312686 45 39.5 L 45 23.5 C 44.999917173141974 22.67160718568731 44.328392814312686 22.000082826858023 43.5 22 L 33 22 L 33 9.5 C 32.999917173141974 8.67160718568731 32.328392814312686 8.000082826858023 31.5 8 L 16.5 8 z M 18 11 L 30 11 L 30 23.5 C 30.000082826858023 24.32839281431269 30.67160718568731 24.999917173141977 31.5 25 L 42 25 L 42 38 L 6 38 L 6 37.5 L 6 23.5 L 6 19 L 16.5 19 C 17.32839281431269 18.999917173141977 17.999917173141977 18.32839281431269 18 17.5 L 18 11 z M 24.982422 13.998047 C 24.907047 13.999391 24.832062 14.010297 24.757812 14.029297 L 22.757812 14.529297 C 22.221812 14.663297 21.895297 15.206188 22.029297 15.742188 C 22.163297 16.278188 22.708188 16.604703 23.242188 16.470703 L 24 16.28125 L 24 21 C 24 21.552 24.448 22 25 22 C 25.552 22 26 21.552 26 21 L 26 15 C 26 14.692 25.857234 14.400937 25.615234 14.210938 C 25.432984 14.068438 25.208547 13.994016 24.982422 13.998047 z M 13 22 C 11.356 22 10.413234 22.965156 10.115234 23.535156 C 9.8652344 24.013156 10.048578 24.587516 10.517578 24.853516 C 10.985578 25.116516 11.588094 24.949234 11.871094 24.490234 C 11.901094 24.440234 12.195 24 13 24 C 13.551 24 14 24.449 14 25 C 14 25.485 13.056828 26.011547 12.298828 26.435547 C 11.221828 27.036547 10 27.717 10 29 C 10 29.552 10.448 30 11 30 L 15 30 C 15.552 30 16 29.552 16 29 C 16 28.448 15.552 28 15 28 L 13.595703 28 C 14.739703 27.35 16 26.515 16 25 C 16 23.346 14.654 22 13 22 z M 35.875 28 C 34.315 28 33.372531 28.956453 33.269531 29.064453 C 32.896531 29.463453 32.918547 30.080938 33.310547 30.460938 C 33.702547 30.840938 34.33175 30.830313 34.71875 30.445312 C 34.73675 30.427312 35.173 30 35.875 30 C 36.202 30 36.75 30.065 36.75 30.5 C 36.75 30.699 36.75 31 36 31 C 35.448 31 35 31.448 35 32 C 35 32.552 35.448 33 36 33 C 36.167 33 37 33.024 37 33.5 C 37 33.976 36.167 34 36 34 C 35.115 34 34.583922 33.685156 34.544922 33.660156 C 34.085922 33.363156 33.471969 33.489312 33.167969 33.945312 C 32.861969 34.405313 32.986312 35.026031 33.445312 35.332031 C 33.548313 35.400031 34.491 36 36 36 C 37.794 36 39 34.995 39 33.5 C 39 32.85 38.772188 32.291141 38.367188 31.869141 C 38.614187 31.487141 38.75 31.024 38.75 30.5 C 38.75 29.028 37.568 28 35.875 28 z" stroke-linecap="round" />
+</g>
+</svg></div>
+                            <div>
+                                <h4>Leadership Through DECA</h4>
+                                <p>Excellence and growth shown through your DECA experience and activities</p>
+                            </div>
+                        </div>
+                        
+                        <div class="criteria-item">
+                            <div class="criteria-icon"><svg id='Interface_Content_Book_Open_24' width='24' height='24' viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink'><rect width='24' height='24' stroke='none' fill='#000000' opacity='0'/>
+
+
+<g transform="matrix(1.43 0 0 1.43 12 12)" >
+<g style="" >
+<g transform="matrix(1 0 0 1 -3.25 0)" >
+<path style="stroke: rgb(255,255,255); stroke-width: 1; stroke-dasharray: none; stroke-linecap: round; stroke-dashoffset: 0; stroke-linejoin: round; stroke-miterlimit: 4; fill: none; fill-rule: nonzero; opacity: 1;" transform=" translate(-3.75, -7)" d="M 7 13.5 C 5.535238337540116 11.887361558344494 3.548795779669297 10.842797289945402 1.3900000000000006 10.55 C 0.8810650633464223 10.493684893047469 0.4968937654401129 10.062031749332515 0.49999999999999956 9.55 L 0.49999999999999967 1.5 C 0.49998076866794855 1.2076881817885767 0.627862249010579 0.930002681616008 0.8500000000000002 0.7399999999999998 C 1.068133091883883 0.5535309857942933 1.3558634241559409 0.4697613953859726 1.6399999999999997 0.5099999999999999 C 3.70429174198631 0.8526068524861488 5.592717531110141 1.8813761256655503 6.999999999999994 3.4299999999999935 Z" stroke-linecap="round" />
+</g>
+<g transform="matrix(1 0 0 1 3.25 0)" >
+<path style="stroke: rgb(255,255,255); stroke-width: 1; stroke-dasharray: none; stroke-linecap: round; stroke-dashoffset: 0; stroke-linejoin: round; stroke-miterlimit: 4; fill: none; fill-rule: nonzero; opacity: 1;" transform=" translate(-10.25, -7)" d="M 7 13.5 C 8.464761662459884 11.887361558344494 10.451204220330698 10.842797289945402 12.609999999999996 10.55 C 13.118934936653577 10.493684893047469 13.503106234559887 10.062031749332515 13.5 9.55 L 13.5 1.5 C 13.500019231332052 1.2076881817885767 13.37213775098942 0.9300026816160082 13.15 0.7399999999999998 C 12.931866908116117 0.5535309857942932 12.644136575844058 0.46976139538597234 12.36 0.51 C 10.29570825801369 0.8526068524861512 8.407282468889848 1.8813761256655552 6.999999999999998 3.4299999999999997 Z" stroke-linecap="round" />
+</g>
+</g>
+</g>
+</svg></div>
+                            <div>
+                                <h4>Clear Educational Goals</h4>
+                                <p>Future impact and commitment to making a difference in your community</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="feature-sidebar">
+                    <div class="sidebar-card">
+                        <h3>Your Privacy Matters</h3>
+                        <p>Every application is reviewed with care, respect, and confidentiality. Your story remains anonymous.</p>
+                    </div>
+                    
+                    <div class="sidebar-card accent">
+                        <h3>Your Story Belongs Here</h3>
+                        <p>If you've navigated hardship, balanced responsibility beyond your years, or found your voice through DECA—this scholarship was created with you in mind.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Bento Grid - What You Receive -->
+        <section class="bento-section">
+            <div class="bento-container">
+                <div class="section-header">
+                    <h2>What You Receive</h2>
+                    <p>More than financial support—recognition for your complete journey</p>
+                </div>
+                
+                <div class="bento-grid">
+                    <div class="bento-item">
+                        <div>
+                            <div class="bento-icon"><svg id='Money_Bag_24' width='42' height='42' viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink'><rect width='32' height='32' stroke='#ffffff' fill='#ffffff' opacity='0'/>
+
+
+<g transform="matrix(0.77 0 0 0.77 12 12)" >
+<path style="stroke: none; stroke-width: 1; stroke-dasharray: none; stroke-linecap: butt; stroke-dashoffset: 0; stroke-linejoin: miter; stroke-miterlimit: 4; fill: rgb(30, 58, 138
+); fill-rule: nonzero; opacity: 1;" transform=" translate(-15, -14)" d="M 15 1 C 14.115084 1 13.328373 1.3906671 12.779297 2 L 10.001953 2 C 9.2949531 2 8.8092656 2.7150937 9.0722656 3.3710938 L 10 6 L 20 6 L 20.927734 3.3710938 C 21.190734 2.7150937 20.705047 2 19.998047 2 L 17.220703 2 C 16.671627 1.3906671 15.884916 1 15 1 z M 10 8 C 10 8 3 14 3 21 C 3 25 6 27 8 27 L 15 27 L 22 27 C 24 27 27 25 27 21 C 27 14 20 8 20 8 L 10 8 z M 14 11.5 L 16 11.5 L 16 13.115234 C 17.35 13.417234 18.252875 14.337078 18.296875 15.580078 L 16.611328 15.580078 C 16.528328 14.904078 15.899203 14.453125 15.033203 14.453125 C 14.137203 14.453125 13.544922 14.868484 13.544922 15.521484 C 13.544922 16.049484 13.952078 16.353406 14.955078 16.566406 L 15.988281 16.785156 C 17.709281 17.147156 18.449219 17.89075 18.449219 19.21875 C 18.449219 20.64875 17.532 21.607438 16 21.898438 L 16 23.5 L 14 23.5 L 14 21.902344 C 12.529 21.626344 11.604781 20.723344 11.550781 19.402344 L 13.28125 19.402344 C 13.36425 20.096344 14.065219 20.541016 15.074219 20.541016 C 16.005219 20.541016 16.664063 20.090359 16.664062 19.443359 C 16.664062 18.897359 16.2375 18.583422 15.1875 18.357422 L 14.072266 18.119141 C 12.512266 17.793141 11.746094 16.980781 11.746094 15.675781 C 11.746094 14.362781 12.615 13.427141 14 13.119141 L 14 11.5 z" stroke-linecap="round" />
+</g>
+</svg></div>
+                            <h3>Financial Support</h3>
+                            <p>Financial support toward post-secondary education (paid directly to your post-secondary institution)</p>
+                        </div>
+                    </div>
+                    
+                    <div class="bento-item">
+                        <div class="bento-icon"><svg id='Multiple_Stars_24' width='42' height='42' viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink'><rect width='32' height='32' stroke='none' fill='#000000' opacity='0'/>
+
+
+<g transform="matrix(0.86 0 0 0.86 12 12)" >
+<path style="stroke: none; stroke-width: 1; stroke-dasharray: none; stroke-linecap: butt; stroke-dashoffset: 0; stroke-linejoin: miter; stroke-miterlimit: 4; fill: rgb(30, 58, 138); fill-rule: nonzero; opacity: 1;" transform=" translate(-11.43, -12.44)" d="M 13.654297 2.0488281 L 12.525391 4.3378906 L 10 4.703125 L 11.826172 6.484375 L 11.396484 9 L 13.654297 7.8125 L 15.912109 9 L 15.482422 6.484375 L 17.308594 4.703125 L 14.783203 4.3378906 L 13.654297 2.0488281 z M 7.8515625 7.609375 L 6.9550781 9.4257812 L 5.3789062 12.619141 L -0.1484375 13.423828 L 3.8515625 17.322266 L 2.90625 22.828125 L 7.8515625 20.228516 L 12.796875 22.828125 L 11.851562 17.322266 L 15.853516 13.423828 L 10.324219 12.619141 L 7.8515625 7.609375 z M 20 9.2441406 L 19.072266 11.123047 L 17 11.423828 L 18.5 12.886719 L 18.146484 14.951172 L 20 13.976562 L 21.853516 14.951172 L 21.5 12.886719 L 23 11.423828 L 20.927734 11.123047 L 20 9.2441406 z" stroke-linecap="round" />
+</g>
+</svg></div>
+                        <h3>Recognition for Your Full Journey</h3>
+                        <p>Recognition for your full journey—not just achievements</p>
+                    </div>
+                    
+                    <div class="bento-item">
+                        <div class="bento-icon"><svg id='People_24' width='42' height='42' viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink'><rect width='32' height='32' stroke='none' fill='#000000' opacity='0'/>
+
+
+<g transform="matrix(0.67 0 0 0.67 12 12)" >
+<path style="stroke: none; stroke-width: 1; stroke-dasharray: none; stroke-linecap: butt; stroke-dashoffset: 0; stroke-linejoin: miter; stroke-miterlimit: 4; fill: rgb(30, 58, 138); fill-rule: nonzero; opacity: 1;" transform=" translate(-15, -15)" d="M 6.6015625 3 C 5.6875625 3 5 4 5 4 C -0.235 4 2.6532344 12.355891 1.1152344 13.587891 C 1.1152344 13.587891 2.058 14.753906 5 14.753906 L 5 15.751953 C 4.187 17.869953 -2.9605947e-16 17.087 0 21 L 8.0234375 21 C 8.7274375 20.574 11 19.392578 11 19.392578 C 10.457 18.812578 9.6736719 17.809781 9.3886719 17.050781 C 8.7646719 16.737781 8.237 16.369953 8 15.751953 L 8 14.742188 C 8.19 14.742188 8.7502656 14.698297 8.9472656 14.654297 C 8.5012656 13.967297 8.125 12.401438 8.125 11.523438 C 8.125 9.2904375 9.0866406 7.4537344 10.681641 6.3027344 C 10.200641 4.4617344 9.1325625 3 6.6015625 3 z M 23 3 C 20.777 3 19.412031 4.5292031 19.082031 6.5332031 C 20.698031 7.3992031 21.75 9.2661875 21.75 11.617188 C 21.75 12.352187 21.578578 13.059422 21.392578 13.607422 C 21.461578 13.878422 21.5 14.180625 21.5 14.515625 C 21.5 16.985625 19 19.449219 19 19.449219 C 19.543 19.686219 21.280234 20.569 21.990234 21 L 30 21 C 30 15.75 25.737 17.25 25 15 L 25 13.5 C 25.332 13.333 26.122656 12.183156 26.222656 11.285156 C 26.482656 11.265156 27 10.629547 27 10.060547 C 27 9.4915469 26.819109 9.2521562 26.662109 9.1601562 C 26.662109 9.1601562 27 8.409 27 7.5 C 27 5.679 26.508 4 25 4 C 25 4 24.567 3 23 3 z M 15 7 C 12.308 7 10.125 8.6214375 10.125 11.523438 C 10.125 12.750438 10.8125 13.707031 10.8125 13.707031 C 10.8125 13.707031 10.5 13.860625 10.5 14.515625 C 10.5 15.788625 11.318359 16.09375 11.318359 16.09375 C 11.432359 17.10175 13 18.578125 13 18.578125 L 13 20.263672 C 12.158 22.789672 7 21.125 7 27 L 23 27 C 23 21.105 17.842 22.789672 17 20.263672 L 17 18.578125 C 17 18.578125 18.567641 17.10175 18.681641 16.09375 C 18.681641 16.09375 19.5 15.528625 19.5 14.515625 C 19.5 13.813625 19.1875 13.707031 19.1875 13.707031 C 19.1875 13.707031 19.75 12.637188 19.75 11.617188 C 19.75 9.5721875 18.724 8 17 8 C 17 8 16.268 7 15 7 z" stroke-linecap="round" />
+</g>
+</svg></div>
+                        <h3>Community Validation</h3>
+                        <p>Validation from DECA alumni and supporters who actively review applications</p>
+                    </div>
+                    
+                    <div class="bento-item">
+                        <div class="bento-icon"><svg id='Trophy_24' width='42' height='42' viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink'><rect width='24' height='24' stroke='none' fill='#000000' opacity='0'/>
+
+
+<g transform="matrix(0.77 0 0 0.77 12 12)" >
+<path style="stroke: none; stroke-width: 1; stroke-dasharray: none; stroke-linecap: butt; stroke-dashoffset: 0; stroke-linejoin: miter; stroke-miterlimit: 4; fill: rgb(30, 58, 138); fill-rule: nonzero; opacity: 1;" transform=" translate(-15, -15)" d="M 7 3 C 6.639364083422431 2.994899710454515 6.303918635428393 3.184375296169332 6.122112278513483 3.495872849714331 C 5.940305921598572 3.8073704032593296 5.940305921598573 4.192629596740671 6.122112278513484 4.504127150285671 C 6.303918635428394 4.815624703830669 6.639364083422431 5.005100289545485 7.000000000000001 5 L 7 7.3730469 C 6.5597055 7.148031 6.0659678 7 5.5 7 C 3.5788117 7 2 8.5788117 2 10.5 C 2 11.85119 2.8811859 12.901881 3.9257812 13.763672 C 4.9703766 14.625463 6.2773212 15.350673 7.5703125 15.964844 C 8.7167571 16.509405 9.8235912 16.943405 10.738281 17.279297 C 11.951812 18.925402 13 20 13 20 L 15 20 L 17 20 C 17 20 18.048188 18.925402 19.261719 17.279297 C 20.176409 16.943405 21.283243 16.509405 22.429688 15.964844 C 23.722679 15.350673 25.029623 14.625463 26.074219 13.763672 C 27.118814 12.901881 28 11.85119 28 10.5 C 28 8.5788117 26.421188 7 24.5 7 C 23.934032 7 23.440295 7.148031 23 7.3730469 L 23 5 C 23.360635916577568 5.005100289545485 23.696081364571608 4.815624703830668 23.877887721486516 4.50412715028567 C 24.059694078401428 4.19262959674067 24.059694078401428 3.8073704032593296 23.877887721486516 3.4958728497143308 C 23.696081364571608 3.184375296169332 23.360635916577568 2.994899710454515 23 3 L 7 3 z M 5.5 9 C 6.2166667 9 6.8314947 9.6281696 7.3164062 10.490234 C 7.3245973 10.504796 7.3298461 10.51863 7.3378906 10.533203 C 7.6703516 11.871745 8.2170635 13.166162 8.8535156 14.345703 C 8.7098958 14.280322 8.5736226 14.228525 8.4296875 14.160156 C 7.2226788 13.586827 6.0296234 12.905787 5.1992188 12.220703 C 4.3688141 11.535619 4 10.89881 4 10.5 C 4 9.6591883 4.6591883 9 5.5 9 z M 24.5 9 C 25.340812 9 26 9.6591883 26 10.5 C 26 10.89881 25.631186 11.535619 24.800781 12.220703 C 23.970377 12.905787 22.777321 13.586827 21.570312 14.160156 C 21.426377 14.228525 21.290104 14.280322 21.146484 14.345703 C 21.782937 13.166162 22.329648 11.871745 22.662109 10.533203 C 22.670154 10.51863 22.675403 10.504796 22.683594 10.490234 C 23.168505 9.6281696 23.783333 9 24.5 9 z M 12 22 C 10.895 22 10 22.895 10 24 L 10 25 C 9.63936408342243 24.994899710454515 9.303918635428394 25.184375296169332 9.122112278513482 25.49587284971433 C 8.940305921598572 25.80737040325933 8.940305921598572 26.192629596740673 9.122112278513484 26.50412715028567 C 9.303918635428394 26.815624703830668 9.639364083422432 27.005100289545485 10 27 L 20 27 C 20.360635916577568 27.005100289545485 20.696081364571608 26.815624703830668 20.877887721486516 26.50412715028567 C 21.059694078401428 26.19262959674067 21.059694078401428 25.80737040325933 20.877887721486516 25.49587284971433 C 20.696081364571608 25.184375296169332 20.360635916577568 24.994899710454515 20 25 L 20 24 C 20 22.895 19.105 22 18 22 L 12 22 z" stroke-linecap="round" />
+</g>
+</svg></div>
+                        <h3>Legacy Inclusion</h3>
+                        <p>Inclusion in a legacy built on resilience and leadership</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Stories - Magazine Style -->
+        <section class="stories-section" id="stories">
+            <div class="stories-container">
+                <div class="section-header">
+                    <h2>Stories of Perseverance</h2>
+                    <p>Real journeys from NaShuntae's Gift honorees. Details are intentionally anonymized.</p>
+                </div>
+                
+                <div class="stories-grid">
+                    <div class="story-card-modern">
+                        <div class="story-header-modern">
+                            <h3>"I Learned Responsibility Before I Learned Algebra"</h3>
+                        </div>
+                        <div class="story-body-modern">
+                            
+                            <p>By middle school, this student's mornings began with medication schedules and therapy appointments, not homework. Caring for a sibling with complex medical needs reshaped family life and finances. Studying often happened in hospital waiting rooms. Instead of withdrawing, the student found purpose in DECA—turning responsibility into leadership and advocacy.</p>
+                        </div>
+                    </div>
+
+                    <div class="story-card-modern">
+                        <div class="story-header-modern">
+                            <h3>"When the Person You Love Gets Sick, Everything Changes"</h3>
+                        </div>
+                        <div class="story-body-modern">
+                            
+                            <p>A cancer diagnosis doesn't just affect one person. For this student, it meant becoming a caregiver while still in high school. Between hospital visits and late-night homework, fear and uncertainty were constant. DECA became a place to develop discipline and empathy under pressure—and clarified a calling to serve others.</p>
+                        </div>
+                    </div>
+
+                    <div class="story-card-modern">
+                        <div class="story-header-modern">
+                            <h3>"No One Was Clapping—So I Learned to Clap for Myself"</h3>
+                        </div>
+                        <div class="story-body-modern">
+                            
+                            <p>Achievements accumulated, but recognition did not. Without consistent family support, this student learned to self-validate and persist quietly. Through DECA, mentors noticed, peers relied on them, and leadership took root. Eventually, they became the support system they once needed.</p>
+                        </div>
+                    </div>
+
+                    <div class="story-card-modern">
+                        <div class="story-header-modern">
+                            <h3>"We Didn't Have the Money—So We Built the Solution"</h3>
+                        </div>
+                        <div class="story-body-modern">
+                            
+                            <p>Structural funding barriers threatened to shut students out of DECA entirely. Rather than accept decline, one student rebuilt fundraising models, challenged systems, and mobilized peers. The result wasn't just money raised—it was access restored and a chapter renewed.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Honorees -->
+        <section class="honorees-section" id="honorees">
+            <div class="honorees-container">
+                <h2>Honoring Our Honorees</h2>
+                <p class="honorees-intro">We proudly recognize students whose perseverance and leadership embody the spirit of NaShuntae's Gift</p>
+                
+                <div class="honorees-grid">
+                    <div class="honoree-name">Luis Morales Carrera</div>
+                    <div class="honoree-name">Malak Fakhreddin</div>
+                    <div class="honoree-name">Sophie Henderson</div>
+                    <div class="honoree-name">Lilly Kissinger</div>
+                    <div class="honoree-name">Isabella Martinez</div>
+                    <div class="honoree-name">Ella Ogden</div>
+                    <div class="honoree-name">Ally Phan</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA -->
+        <section class="cta-split">
+            <div class="cta-content">
+                <h2>Ready to Share Your Story?</h2>
+                <p>Your journey of perseverance deserves recognition. Applications reviewed with care, respect, and complete confidentiality.</p>
+                <a href="#apply" class="btn-primary">Apply for NaShuntae's Gift</a>
+            </div>
+        </section>
+
+        <!-- Legacy -->
+        <section class="legacy-section">
+            <div class="legacy-container">
+                <div class="legacy-image"><img src="https://cdn.prod.website-files.com/675f9e2d3d12a7e636a1bdb3/69572d988a594871217865b2_ng-legacy-image.jpg" alt="NaShuntae Pleasant-Miles" style="width: 100%; height: 100%; object-fit: cover;"></div>
+                <div class="legacy-content">
+                    <h2>Our Why</h2>
+                    <p class="name">NaShuntae Pleasant-Miles</p>
+                    <p>NaShuntae Pleasant-Miles was a respected leader, a Washington DECA State President, and a student whose life embodied perseverance. Though her life was cut short, her spirit lives on through the students whose resilience mirrors her own.</p>
+                    <div class="testimonial-box">
+                        <div class="testimonial-photo">
+                            <img src="https://cdn.prod.website-files.com/675f9e2d3d12a7e636a1bdb3/675f9e2d3d12a7e636a1bdf4_Image_Nate.jpg" alt="Nate Miles">
+                        </div>
+                        <div class="testimonial-content">
+                            <p class="testimonial-quote">"She could have been UN Ambassador, maybe even President."</p>
+                            <p class="testimonial-author">Nate Miles</p>
+                            <p class="testimonial-role">NaShuntae's Father</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- DONOR PAGE -->
+    <div id="donor-page" class="page-content">
+        <!-- Diagonal Hero -->
+        <section class="hero-diagonal">
+            <div class="hero-content-wrapper">
+                <div class="hero-text">
+                    <div class="hero-badge">Not a Passive Scholarship</div>
+                    <h1>Give with <span>Purpose.</span><br>Decide with Impact.</h1>
+                    <p style="font-size: 22px; font-weight: 600; margin-top: 24px;">When you donate, you don't just give—you participate.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- What Makes Different -->
+        <section class="section-asymmetric" id="about-donor">
+            <div class="asymmetric-grid">
+                <div class="feature-large">
+                    <h2>What Makes This Scholarship Different</h2>
+                    <p class="subtitle">Most scholarships end with a donation. NaShuntae's Gift invites you in.</p>
+                    
+                    <div class="criteria-list">
+                        <div class="criteria-item">
+                            <div class="criteria-icon"><svg id='Recruiting_Employee_Resume_Document_Review_24' width='24' height='24' viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink'><rect width='24' height='24' stroke='none' fill='#000000' opacity='0'/>
+
+
+<g transform="matrix(0.83 0 0 0.83 12 12)" >
+<g style="" >
+<g transform="matrix(1 0 0 1 -1.87 -0.12)" >
+<path style="stroke: rgb(255,255,255); stroke-width: 1.5; stroke-dasharray: none; stroke-linecap: round; stroke-dashoffset: 0; stroke-linejoin: round; stroke-miterlimit: 4; fill: none; fill-rule: nonzero; opacity: 1;" transform=" translate(-10.13, -11.88)" d="M 12.876 22.876 L 1.8759999999999994 22.876 C 1.323715250169206 22.876 0.8759999999999994 22.428284749830794 0.8759999999999994 21.876 L 0.8759999999999994 1.8760000000000012 C 0.8759999999999994 1.3237152501692078 1.323715250169206 0.8760000000000012 1.8759999999999994 0.8760000000000012 L 18.375999999999998 0.8760000000000012 C 18.92828474983079 0.8760000000000012 19.375999999999998 1.3237152501692075 19.375999999999998 1.876000000000001 L 19.375999999999998 9.876000000000001" stroke-linecap="round" />
+</g>
+<g transform="matrix(1 0 0 1 -5.62 1.22)" >
+<line style="stroke: rgb(255,255,255); stroke-width: 1.5; stroke-dasharray: none; stroke-linecap: round; stroke-dashoffset: 0; stroke-linejoin: round; stroke-miterlimit: 4; fill: none; fill-rule: nonzero; opacity: 1;" x1="-2.5" y1="0" x2="2.5" y2="0" />
+</g>
+<g transform="matrix(1 0 0 1 -5.62 4.86)" >
+<line style="stroke: rgb(255,255,255); stroke-width: 1.5; stroke-dasharray: none; stroke-linecap: round; stroke-dashoffset: 0; stroke-linejoin: round; stroke-miterlimit: 4; fill: none; fill-rule: nonzero; opacity: 1;" x1="-2.5" y1="0" x2="2.5" y2="0" />
+</g>
+<g transform="matrix(1 0 0 1 -6.31 -3.75)" >
+<line style="stroke: rgb(255,255,255); stroke-width: 1.5; stroke-dasharray: none; stroke-linecap: round; stroke-dashoffset: 0; stroke-linejoin: round; stroke-miterlimit: 4; fill: none; fill-rule: nonzero; opacity: 1;" x1="-1.8105" y1="0" x2="1.8105" y2="0" />
+</g>
+<g transform="matrix(1 0 0 1 4.65 4.65)" >
+<circle style="stroke: rgb(255,255,255); stroke-width: 1.5; stroke-dasharray: none; stroke-linecap: round; stroke-dashoffset: 0; stroke-linejoin: round; stroke-miterlimit: 4; fill: none; fill-rule: nonzero; opacity: 1;" cx="0" cy="0" r="4.529" />
+</g>
+<g transform="matrix(1 0 0 1 9.5 9.5)" >
+<line style="stroke: rgb(255,255,255); stroke-width: 1.5; stroke-dasharray: none; stroke-linecap: round; stroke-dashoffset: 0; stroke-linejoin: round; stroke-miterlimit: 4; fill: none; fill-rule: nonzero; opacity: 1;" x1="1.6239999999999988" y1="1.6239999999999988" x2="-1.6239999999999988" y2="-1.6239999999999988" />
+</g>
+<g transform="matrix(1 0 0 1 1.68 -7.45)" >
+<circle style="stroke: rgb(255,255,255); stroke-width: 1.5; stroke-dasharray: none; stroke-linecap: round; stroke-dashoffset: 0; stroke-linejoin: round; stroke-miterlimit: 4; fill: none; fill-rule: nonzero; opacity: 1;" cx="0" cy="0" r="1.486" />
+</g>
+<g transform="matrix(1 0 0 1 1.68 -3.93)" >
+<path style="stroke: rgb(255,255,255); stroke-width: 1.5; stroke-dasharray: none; stroke-linecap: round; stroke-dashoffset: 0; stroke-linejoin: round; stroke-miterlimit: 4; fill: none; fill-rule: nonzero; opacity: 1;" transform=" translate(-13.68, -8.07)" d="M 16.11 9.009 C 15.825755468418212 7.900004408821764 14.826343297131496 7.124444174203601 13.6815 7.124444174203601 C 12.536656702868502 7.124444174203601 11.537244531581788 7.900004408821763 11.253 9.009" stroke-linecap="round" />
+</g>
+<g transform="matrix(1 0 0 1 -7.11 -7.08)" >
+<line style="stroke: rgb(255,255,255); stroke-width: 1.5; stroke-dasharray: none; stroke-linecap: round; stroke-dashoffset: 0; stroke-linejoin: round; stroke-miterlimit: 4; fill: none; fill-rule: nonzero; opacity: 1;" x1="-1.0174999999999998" y1="0" x2="1.0174999999999998" y2="0" />
+</g>
+</g>
+</g>
+</svg></div>
+                            <div>
+                                <h4>Review Anonymized Applications</h4>
+                                <p>Read real stories of perseverance from students shaped by adversity</p>
+                            </div>
+                        </div>
+                        
+                        <div class="criteria-item">
+                            <div class="criteria-icon"><svg id='Cities_Politics_Vote_24' width='24' height='24' viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink'><rect width='24' height='24' stroke='none' fill='#000000' opacity='0'/>
+
+
+<g transform="matrix(1.43 0 0 1.43 12 12)" >
+<g style="" >
+<g transform="matrix(1 0 0 1 0 2.78)" >
+<path style="stroke: rgb(255,255,255); stroke-width: 1; stroke-dasharray: none; stroke-linecap: round; stroke-dashoffset: 0; stroke-linejoin: miter; stroke-miterlimit: 4; fill: none; fill-rule: nonzero; opacity: 1;" transform=" translate(-7, -9.78)" d="M 2.24786 6.92753 C 2.20519 6.92908 2.16522 6.93065 2.1273 6.93224 C 1.66244 6.95177 1.27002 7.29622 1.20681 7.75718 C 1.02279 9.09911 1.02279 10.3742 1.20681 11.7161 C 1.27002 12.1771 1.66297 12.5156 2.1279 12.5336 C 5.46098 12.6625 8.53897 12.6625 11.8721 12.5336 C 12.337 12.5156 12.7299 12.1771 12.7931 11.7161 C 12.9772 10.3742 12.9772 9.09911 12.7931 7.75718 C 12.7299 7.29622 12.3376 6.94858 11.8727 6.92997 C 11.8522 6.92915 11.8308 6.92834 11.8086 6.92753" stroke-linecap="round" />
+</g>
+<g transform="matrix(1 0 0 1 0.34 -1.49)" >
+<path style="stroke: rgb(255,255,255); stroke-width: 1; stroke-dasharray: none; stroke-linecap: butt; stroke-dashoffset: 0; stroke-linejoin: miter; stroke-miterlimit: 4; fill: none; fill-rule: nonzero; opacity: 1;" transform=" translate(-7.34, -5.51)" d="M 7.76748 2.3032 C 7.56751 2.1697 7.3007 2.20331 7.1377 2.38007 C 6.07038 3.53748 5.15129 4.66475 4.23254 5.9433 C 4.09223 6.13856 4.11304 6.40667 4.28408 6.57565 C 5.1121 7.39374 5.95424 8.08035 6.92232 8.72665 C 7.12229 8.86016 7.3891 8.82655 7.5521 8.64979 C 8.61942 7.49237 9.53851 6.3651 10.4573 5.08656 C 10.5976 4.8913 10.5768 4.62319 10.4057 4.4542 C 9.5777 3.63611 8.73556 2.9495 7.76748 2.3032 Z" stroke-linecap="round" />
+</g>
+<g transform="matrix(1 0 0 1 0 2.47)" >
+<path style="stroke: rgb(255,255,255); stroke-width: 1; stroke-dasharray: none; stroke-linecap: round; stroke-dashoffset: 0; stroke-linejoin: round; stroke-miterlimit: 4; fill: none; fill-rule: nonzero; opacity: 1;" transform=" translate(-7, -9.47)" d="M 4.31396 9.47357 L 9.68635 9.47357" stroke-linecap="round" />
+</g>
+</g>
+</g>
+</svg>️</div>
+                            <div>
+                                <h4>Vote on Recipients</h4>
+                                <p>Your voice matters in recognizing students who demonstrate resilience</p>
+                            </div>
+                        </div>
+                        
+                        <div class="criteria-item">
+                            <div class="criteria-icon"><svg id='Idea_24' width='24' height='24' viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink'><rect width='24' height='24' stroke='none' fill='#000000' opacity='0'/>
+
+
+<g transform="matrix(0.71 0 0 0.71 12 12)" >
+<path style="stroke: none; stroke-width: 1; stroke-dasharray: none; stroke-linecap: butt; stroke-dashoffset: 0; stroke-linejoin: miter; stroke-miterlimit: 4; fill: rgb(255,255,255); fill-rule: nonzero; opacity: 1;" transform=" translate(-16, -15.7)" d="M 6.8125 2.40625 L 5.40625 3.8125 L 7.5 5.90625 L 8.90625 4.5 Z M 25.1875 2.40625 L 23.09375 4.5 L 24.5 5.90625 L 26.59375 3.8125 Z M 16 3.03125 C 15.671875 3.035156 15.335938 3.054688 15 3.09375 C 14.988281 3.09375 14.980469 3.09375 14.96875 3.09375 C 10.914063 3.558594 7.6875 6.835938 7.125 10.875 C 6.675781 14.125 8.015625 17.070313 10.25 18.96875 C 11.207031 19.789063 11.796875 20.882813 12 22 L 12 28 L 14.28125 28 C 14.628906 28.597656 15.261719 29 16 29 C 16.738281 29 17.371094 28.597656 17.71875 28 L 20 28 L 20 24 L 20.09375 24 L 20.09375 22.8125 C 20.09375 21.347656 20.855469 19.867188 22.09375 18.71875 C 23.75 17.0625 25 14.707031 25 12 C 25 7.058594 20.933594 2.984375 16 3.03125 Z M 16 5.03125 C 19.863281 4.976563 23 8.140625 23 12 C 23 14.09375 22.03125 15.9375 20.6875 17.28125 L 20.71875 17.3125 C 19.375 18.566406 18.515625 20.207031 18.28125 22 L 13.90625 22 C 13.6875 20.285156 12.949219 18.628906 11.5625 17.4375 C 9.796875 15.933594 8.742188 13.675781 9.09375 11.125 C 9.53125 7.972656 12.085938 5.441406 15.21875 5.09375 C 15.480469 5.0625 15.742188 5.035156 16 5.03125 Z M 2 12 L 2 14 L 5 14 L 5 12 Z M 27 12 L 27 14 L 30 14 L 30 12 Z M 7.5 20.09375 L 5.40625 22.1875 L 6.8125 23.59375 L 8.90625 21.5 Z M 24.5 20.09375 L 23.09375 21.5 L 25.1875 23.59375 L 26.59375 22.1875 Z M 14 24 L 18 24 L 18 26 L 14 26 Z" stroke-linecap="round" />
+</g>
+</svg></div>
+                            <div>
+                                <h4>Recognize Perseverance</h4>
+                                <p>Help honor students for their journey, not just their privilege</p>
+                            </div>
+                        </div>
+                        
+                        <div class="criteria-item">
+                            <div class="criteria-icon"><svg id='Opened_Gift_24' width='24' height='24' viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink'><rect width='24' height='24' stroke='none' fill='#000000' opacity='0'/>
+
+
+<g transform="matrix(0.76 0 0 0.76 12 12)" >
+<path style="stroke: none; stroke-width: 1; stroke-dasharray: none; stroke-linecap: butt; stroke-dashoffset: 0; stroke-linejoin: miter; stroke-miterlimit: 4; fill: rgb(255,255,255); fill-rule: nonzero; opacity: 1;" transform=" translate(-15.14, -15.86)" d="M 16.894531 2.71875 C 16.505099 2.7068615 16.107667 2.7702726 15.724609 2.9199219 C 14.095865 3.5568406 13.474863 5.2133149 13.152344 6.5292969 C 13.075 6.844884 13.117979 6.8418209 13.072266 7.1269531 C 12.845469 6.9484888 12.879991 6.9215802 12.609375 6.7421875 C 11.480025 5.9935358 9.9004394 5.1957668 8.2714844 5.8320312 C 6.7390658 6.4307022 5.9717156 8.1865207 6.5703125 9.71875 C 6.6983896 10.046589 6.888963 10.32997 7.109375 10.582031 L 2.2773438 12.470703 L 2.6425781 13.402344 L 4.8261719 18.990234 L 6 18.53125 L 6 29 L 28 29 L 28 15 L 15.039062 15 L 27.179688 10.255859 L 24.630859 3.734375 L 19.800781 5.6210938 C 19.791775 5.2870917 19.739099 4.9501027 19.611328 4.6230469 C 19.162325 3.4737329 18.062827 2.7544156 16.894531 2.71875 z M 16.847656 4.7109375 C 17.238215 4.7187206 17.59405 4.9573764 17.748047 5.3515625 C 17.95345 5.8773332 17.705267 6.4411552 17.179688 6.6464844 L 15.03125 7.4863281 C 15.06843 7.2573437 15.034653 7.2550426 15.095703 7.0058594 C 15.355026 5.9477385 15.868357 5.0120088 16.451172 4.7832031 C 16.582615 4.7318524 16.71747 4.7083431 16.847656 4.7109375 z M 23.496094 6.3261719 L 24.587891 9.1210938 L 16.207031 12.396484 L 15.113281 9.6015625 L 15.566406 9.4238281 C 16.447039 9.0796041 17.261558 8.7621457 17.908203 8.5097656 L 23.496094 6.3261719 z M 9.5097656 7.625 C 10.083015 7.6522998 10.822419 7.9564419 11.503906 8.4082031 C 11.71853 8.550478 11.695783 8.5751514 11.878906 8.71875 C 11.013033 9.0571927 10.322624 9.3267184 9.7285156 9.5585938 C 9.2010158 9.7644722 8.6371743 9.5163394 8.4316406 8.9902344 C 8.2262375 8.4644637 8.4744186 7.9006417 9 7.6953125 C 9.1457612 7.6383786 9.3186825 7.6159001 9.5097656 7.625 z M 13.25 10.330078 L 14.34375 13.125 L 5.9609375 16.400391 L 4.8691406 13.605469 L 10.455078 11.421875 C 11.103427 11.16883 11.918242 10.850065 12.798828 10.505859 C 12.968271 10.439629 13.119842 10.380958 13.25 10.330078 z M 9.9199219 17 L 16 17 L 16 27 L 8 27 L 8 17.75 L 9.9199219 17 z M 18 17 L 26 17 L 26 27 L 18 27 L 18 17 z" stroke-linecap="round" />
+</g>
+</svg></div>
+                            <div>
+                                <h4>Your Gift Becomes a Voice</h4>
+                                <p>Participate directly in shaping a student's future and educational path</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="feature-sidebar">
+                    <div class="sidebar-card accent">
+                        <h3>Donors $25+ Can:</h3>
+                        <p>Review applications, vote on recipients, and become an essential part of each student's story. This is giving that feels intentional.</p>
+                    </div>
+                    
+                    <div class="sidebar-card">
+                        <h3>Learn & Connect</h3>
+                        <p>You don't just donate and forget. You learn about resilience, connect with stories, and understand the impact of your contribution.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Process Flow -->
+        <section class="process-section">
+            <div class="process-container">
+                <div class="section-header">
+                    <h2>How It Works</h2>
+                    <p>Clear. Fair. Meaningful.</p>
+                </div>
+                
+                <div class="process-flow">
+                    <div class="process-step">
+                        <div class="process-number">1</div>
+                        <h3>Students Apply</h3>
+                        <p>High school seniors share their stories of perseverance and leadership through DECA</p>
+                    </div>
+                    
+                    <div class="process-step">
+                        <div class="process-number">2</div>
+                        <h3>Review & Anonymize</h3>
+                        <p>Applications are carefully reviewed and anonymized to protect student privacy</p>
+                    </div>
+                    
+                    <div class="process-step">
+                        <div class="process-number">3</div>
+                        <h3>Donors Vote</h3>
+                        <p>You review applications and cast your vote on scholarship recipients</p>
+                    </div>
+                    
+                    <div class="process-step">
+                        <div class="process-number">4</div>
+                        <h3>Impact Made</h3>
+                        <p>Funds are paid directly to schools—no middlemen, direct educational impact</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Bento Grid - Why Donors Give -->
+        <section class="bento-section" style="background: #fafbfc;">
+            <div class="bento-container">
+                <div class="section-header">
+                    <h2>Why Donors Give Here</h2>
+                    <p>This is giving that feels intentional</p>
+                </div>
+                
+                <div class="bento-grid">
+                    <div class="bento-item">
+                        <div>
+                            <div class="bento-icon"><svg id='Verified_account_24' width='42' height='42' viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink'><rect width='24' height='24' stroke='none' fill='#000000' opacity='0'/>
+
+
+<g transform="matrix(0.48 0 0 0.48 12 12)" >
+<path style="stroke: none; stroke-width: 1; stroke-dasharray: none; stroke-linecap: butt; stroke-dashoffset: 0; stroke-linejoin: miter; stroke-miterlimit: 4; fill: rgb(30, 58, 138); fill-rule: nonzero; opacity: 1;" transform=" translate(-27, -25)" d="M 24 4 C 18.486 4 14 8.486 14 14 C 14 19.514 18.486 24 24 24 C 29.514 24 34 19.514 34 14 C 34 8.486 29.514 4 24 4 z M 35 24 C 28.925 24 24 28.925 24 35 C 24 41.075 28.925 46 35 46 C 41.075 46 46 41.075 46 35 C 46 28.925 41.075 24 35 24 z M 12.5 28 C 10.019 28 8 30.019 8 32.5 L 8 33.261719 C 8 35.615719 8.9795 37.87875 10.6875 39.46875 C 12.9065 41.53575 17.017 44 24 44 C 24.549 44 25.073891 43.980172 25.587891 43.951172 C 23.369891 41.619172 22 38.472 22 35 C 22 32.42 22.760641 30.022 24.056641 28 L 12.5 28 z M 41 30 C 41.25575 30 41.511531 30.097469 41.707031 30.292969 C 42.098031 30.683969 42.098031 31.316031 41.707031 31.707031 L 33.707031 39.707031 C 33.512031 39.902031 33.256 40 33 40 C 32.744 40 32.487969 39.902031 32.292969 39.707031 L 28.292969 35.707031 C 27.901969 35.316031 27.901969 34.683969 28.292969 34.292969 C 28.683969 33.901969 29.316031 33.901969 29.707031 34.292969 L 33 37.585938 L 40.292969 30.292969 C 40.488469 30.097469 40.74425 30 41 30 z" stroke-linecap="round" />
+</g>
+</svg>️</div>
+                            <h3>Active Role in Selecting Recipients</h3>
+                            <p>Active role in selecting recipients</p>
+                        </div>
+                    </div>
+                    
+                    <div class="bento-item">
+                        <div class="bento-icon"><svg id='Shield_Search_24' width='42' height='42' viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink'><rect width='24' height='24' stroke='none' fill='#000000' opacity='0'/>
+
+
+<g transform="matrix(0.83 0 0 0.83 12 12)" >
+<g style="" >
+<g transform="matrix(1 0 0 1 -1 -2.99)" >
+<circle style="stroke: none; stroke-width: 1; stroke-dasharray: none; stroke-linecap: butt; stroke-dashoffset: 0; stroke-linejoin: miter; stroke-miterlimit: 4; fill: rgb(30, 58, 138); fill-rule: nonzero; opacity: 1;" cx="0" cy="0" r="3.5" />
+</g>
+<g transform="matrix(1 0 0 1 0 0)" >
+<path style="stroke: none; stroke-width: 1; stroke-dasharray: none; stroke-linecap: butt; stroke-dashoffset: 0; stroke-linejoin: miter; stroke-miterlimit: 4; fill: rgb(30, 58, 138); fill-rule: nonzero; opacity: 1;" transform=" translate(-12, -12)" d="M 24 2 C 24.005746997197242 1.4649375131059865 23.796844747814756 0.9498854154905454 23.42 0.5699999999999998 C 23.04093313922294 0.1992877357274419 22.530175803360873 -0.005734575146767895 21.999999999999996 3.3306690738754696e-16 L 2 0 C 0.8954305003384131 0 0 0.8954305003384131 0 2 L 0 9.31 C 0.03850486739497367 16.375184432497747 4.961673543319309 22.473105836319714 11.859999999999992 24 C 11.926302277410219 24.009857508223988 11.99369772258978 24.009857508223988 12.059999999999999 24 C 12.126332723872467 24.009436705557867 12.19366727612753 24.009436705557867 12.259999999999998 24 C 19.14865041005332 22.412497332531647 24.021801658669748 16.269172078739217 24 9.199999999999996 Z M 18.21 16.21 C 18.022233400094446 16.3993126508231 17.76663753637056 16.505798324341672 17.5 16.505798324341672 C 17.23336246362944 16.505798324341672 16.977766599905557 16.3993126508231 16.79 16.21 L 14.26 13.680000000000001 C 14.17052595884438 13.604313096024118 14.03947404115562 13.604313096024118 13.95 13.680000000000001 C 11.83363421161925 15.024891315643236 9.075538542444017 14.768056206275528 7.243881479721129 13.055523226827127 C 5.4122244169982405 11.342990247378724 4.970772973295745 8.60836474896398 6.170522881068013 6.406470800581932 C 7.370272788840283 4.204576852199883 9.907452975499528 3.0929237164822396 12.339500712111896 3.703563223851125 C 14.771548448724264 4.314202731220011 16.482680608531908 6.49252381072118 16.5 9 C 16.510736151330974 10.062294986858818 16.21190511280195 11.104728842192618 15.640000000000004 12 C 15.571661676601975 12.092034640321591 15.571661676601975 12.21796535967841 15.64 12.31 L 18.18 14.850000000000001 C 18.544294932784318 15.225657534681513 18.55737551332524 15.81864385253666 18.21 16.21 Z" stroke-linecap="round" />
+</g>
+</g>
+</g>
+</svg></div>
+                        <h3>Transparent Process</h3>
+                        <p>Transparent process and criteria</p>
+                    </div>
+                    
+                    <div class="bento-item">
+                        <div class="bento-icon"><svg id='Privacy_24' width='42' height='42' viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink'><rect width='24' height='24' stroke='none' fill='#000000' opacity='0'/>
+
+
+<g transform="matrix(0.8 0 0 0.8 12 12)" >
+<path style="stroke: none; stroke-width: 1; stroke-dasharray: none; stroke-linecap: butt; stroke-dashoffset: 0; stroke-linejoin: miter; stroke-miterlimit: 4; fill: rgb(30, 58, 138); fill-rule: nonzero; opacity: 1;" transform=" translate(-15, -14.5)" d="M 15 2 C 11.145666 2 8 5.1456661 8 9 L 8 11 L 6 11 C 4.895 11 4 11.895 4 13 L 4 25 C 4 26.105 4.895 27 6 27 L 24 27 C 25.105 27 26 26.105 26 25 L 26 13 C 26 11.895 25.105 11 24 11 L 22 11 L 22 9 C 22 5.2715823 19.036581 2.2685653 15.355469 2.0722656 C 15.242374955110979 2.026710464860253 15.121904096102767 2.00221916207789 15 2 z M 15 4 C 17.773666 4 20 6.2263339 20 9 L 20 11 L 10 11 L 10 9 C 10 6.2263339 12.226334 4 15 4 z M 15 14 C 17.761 14 20 16.239 20 19 C 20 21.761 17.761 24 15 24 C 12.239 24 10 21.761 10 19 C 10 16.239 12.239 14 15 14 z M 15 16 C 13.343 16 12 17.343 12 19 C 12 20.657 13.343 22 15 22 C 16.657 22 18 20.657 18 19 C 18 18.537 17.886219 18.104891 17.699219 17.712891 C 17.519219 17.889891 17.273 18 17 18 C 16.448 18 16 17.552 16 17 C 16 16.727 16.110109 16.480781 16.287109 16.300781 C 15.895109 16.113781 15.463 16 15 16 z" stroke-linecap="round" />
+</g>
+</svg></div>
+                        <h3>Privacy-First Storytelling</h3>
+                        <p>Privacy-first storytelling</p>
+                    </div>
+                    
+                    <div class="bento-item">
+                        <div class="bento-icon"><svg id='target_24' width='42' height='42' viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink'><rect width='24' height='24' stroke='none' fill='#000000' opacity='0'/>
+
+
+<g transform="matrix(1 0 0 1 12 12)" >
+<g style="" >
+<g transform="matrix(1 0 0 1 0 0)" >
+<path style="stroke: none; stroke-width: 2; stroke-dasharray: none; stroke-linecap: round; stroke-dashoffset: 0; stroke-linejoin: round; stroke-miterlimit: 4; fill: none; fill-rule: nonzero; opacity: 1;" transform=" translate(-12, -12)" d="M 0 0 L 24 0 L 24 24 L 0 24 z" stroke-linecap="round" />
+</g>
+<g transform="matrix(1 0 0 1 0 0)" >
+<circle style="stroke: rgb(30, 58, 138); stroke-width: 2; stroke-dasharray: none; stroke-linecap: round; stroke-dashoffset: 0; stroke-linejoin: round; stroke-miterlimit: 4; fill: none; fill-rule: nonzero; opacity: 1;" cx="0" cy="0" r="1" />
+</g>
+<g transform="matrix(1 0 0 1 0 0)" >
+<circle style="stroke: rgb(30, 58, 138); stroke-width: 2; stroke-dasharray: none; stroke-linecap: round; stroke-dashoffset: 0; stroke-linejoin: round; stroke-miterlimit: 4; fill: none; fill-rule: nonzero; opacity: 1;" cx="0" cy="0" r="5" />
+</g>
+<g transform="matrix(1 0 0 1 0 0)" >
+<circle style="stroke: rgb(30, 58, 138); stroke-width: 2; stroke-dasharray: none; stroke-linecap: round; stroke-dashoffset: 0; stroke-linejoin: round; stroke-miterlimit: 4; fill: none; fill-rule: nonzero; opacity: 1;" cx="0" cy="0" r="9" />
+</g>
+</g>
+</g>
+</svg></div>
+                        <h3>Direct Educational Impact</h3>
+                        <p>Direct educational impact</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Stories -->
+        <section class="stories-section" id="stories-donor">
+            <div class="stories-container">
+                <div class="section-header">
+                    <h2>Real Stories. Impact Made.</h2>
+                    <p>True journeys from NaShuntae's Gift honorees. Names withheld to protect privacy.</p>
+                </div>
+                
+                <div class="stories-grid">
+                    <div class="story-card-modern">
+                        <div class="story-header-modern">
+                            <h3>"I Learned Responsibility Before I Learned Algebra"</h3>
+                        </div>
+                        <div class="story-body-modern">
+                            
+                            <p>By middle school, this student's mornings began with medication schedules and therapy appointments, not homework. Caring for a sibling with complex medical needs reshaped family life and finances. Studying often happened in hospital waiting rooms. Instead of withdrawing, the student found purpose in DECA—turning responsibility into leadership and advocacy.</p>
+                        </div>
+                    </div>
+
+                    <div class="story-card-modern">
+                        <div class="story-header-modern">
+                            <h3>"When the Person You Love Gets Sick, Everything Changes"</h3>
+                        </div>
+                        <div class="story-body-modern">
+                            
+                            <p>A cancer diagnosis doesn't just affect one person. For this student, it meant becoming a caregiver while still in high school. Between hospital visits and late-night homework, fear and uncertainty were constant. DECA became a place to develop discipline and empathy under pressure—and clarified a calling to serve others.</p>
+                        </div>
+                    </div>
+
+                    <div class="story-card-modern">
+                        <div class="story-header-modern">
+                            <h3>"No One Was Clapping—So I Learned to Clap for Myself"</h3>
+                        </div>
+                        <div class="story-body-modern">
+                            
+                            <p>Achievements accumulated, but recognition did not. Without consistent family support, this student learned to self-validate and persist quietly. Through DECA, mentors noticed, peers relied on them, and leadership took root. Eventually, they became the support system they once needed.</p>
+                        </div>
+                    </div>
+
+                    <div class="story-card-modern">
+                        <div class="story-header-modern">
+                            <h3>"We Didn't Have the Money—So We Built the Solution"</h3>
+                        </div>
+                        <div class="story-body-modern">
+                            
+                            <p>Structural funding barriers threatened to shut students out of DECA entirely. Rather than accept decline, one student rebuilt fundraising models, challenged systems, and mobilized peers. The result wasn't just money raised—it was access restored and a chapter renewed.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="honorees-container" style="margin-top: 60px; padding: 0;" id="honorees-donor">
+                    <p class="honorees-intro" style="font-weight: 600;">Recent honorees, now pursuing post-secondary education, include:</p>
+                    <div class="honorees-grid">
+                        <div class="honoree-name">Luis Morales Carrera</div>
+                        <div class="honoree-name">Malak Fakhreddin</div>
+                        <div class="honoree-name">Sophie Henderson</div>
+                        <div class="honoree-name">Lilly Kissinger</div>
+                        <div class="honoree-name">Isabella Martinez</div>
+                        <div class="honoree-name">Ella Ogden</div>
+                        <div class="honoree-name">Ally Phan</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA -->
+        <section class="cta-split">
+            <div class="cta-content">
+                <h2>Ready to Participate?</h2>
+                <p>Your donation helps recognize resilience that often goes unseen—and gives students shaped by adversity a fair chance.</p>
+                <a href="#donate" class="btn-primary">Give $25+. Review. Vote. Decide.</a>
+            </div>
+        </section>
+
+        <!-- Legacy -->
+        <section class="legacy-section">
+            <div class="legacy-container">
+                <div class="legacy-image"><img src="https://cdn.prod.website-files.com/675f9e2d3d12a7e636a1bdb3/69572d988a594871217865b2_ng-legacy-image.jpg" alt="NaShuntae Pleasant-Miles" style="width: 100%; height: 100%; object-fit: cover;"></div>
+                <div class="legacy-content">
+                    <h2>Honoring the Legacy</h2>
+                    <p class="name">NaShuntae Pleasant-Miles</p>
+                    <p>NaShuntae Pleasant-Miles was a respected leader, a Washington DECA State President, and a student whose life embodied perseverance. Though her life was cut short, her spirit lives on through the students whose resilience mirrors her own.</p>
+                    <p class="highlight">NaShuntae's Gift ensures perseverance is seen, honored, and supported—year after year.</p>
+                </div>
+            </div>
+        </section>
+    </div>
+    <!-- Footer Main - Branding & Info -->
+        <div class="footer-main">
+            <div class="footer-main-content">
+                <div class="footer-branding">
+                <div class="logo-text">
+                    <h1><span style="color:white">NaShuntae's Gift</span></h1>
+                    <p><span style="color:#e6e6e6">Perseverance Recognized. Futures Supported.</span></p>
+                </div>
+                </div>
+                
+                <div class="footer-description">
+                    <p>A special project of Washington DECA, a 501(c)3 that prepares emerging high school leaders and entrepreneurs in Washington State for careers in marketing, finance, hospitality, and management.</p>
+                </div>
+                
+                <div class="footer-powered">
+                    <div class="powered-label">powered by</div>
+                    <div class="powered-logo">
+                        <div class="logo-icon"><img src="https://cdn.prod.website-files.com/675f9e2d3d12a7e636a1bdb3/675f9e2d3d12a7e636a1bdf9_MccoyVentures-%234(NoBackground).png" alt="NaShuntae's Gift Logo" style="width: auto; height: 100%; object-fit: cover;"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Footer Bottom - Copyright -->
+        <div class="footer-bottom">
+            <p>© Washington DECA 2025</p>
+        </div>
+
+     <script>
+        function switchPage(pageId) {
+            document.querySelectorAll('.page-content').forEach(page => {
+                page.classList.remove('active');
+            });
+            
+            document.querySelectorAll('.tab-button').forEach(tab => {
+                tab.classList.remove('active');
+            });
+            
+            document.getElementById(pageId + '-page').classList.add('active');
+            event.target.classList.add('active');
+            
+            window.scrollTo({top: 0, behavior: 'smooth'});
+        }
+        
+        function navigateToSection(sectionId, event) {
+            event.preventDefault();
+            
+            // Determine which page is active
+            const studentPageActive = document.getElementById('student-page').classList.contains('active');
+            const donorPageActive = document.getElementById('donor-page').classList.contains('active');
+            
+            // Adjust section ID based on active page
+            let targetId = sectionId;
+            if (donorPageActive) {
+                if (sectionId === 'about') targetId = 'about-donor';
+                if (sectionId === 'stories') targetId = 'stories-donor';
+                if (sectionId === 'honorees') targetId = 'honorees-donor';
+            }
+            
+            // Find the section
+            const section = document.getElementById(targetId);
+            
+            if (section) {
+                // Smooth scroll to section
+                const headerOffset = 140; // Account for sticky header + tabs
+                const elementPosition = section.getBoundingClientRect().top;
+                const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+                
+                window.scrollTo({
+                    top: offsetPosition,
+                    behavior: 'smooth'
+                });
+            }
+        }
+    </script>
+    
+</body>
+</html>
